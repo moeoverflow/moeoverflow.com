@@ -1,5 +1,13 @@
 /* craco.config.js */
 const tailwindcss = require('tailwindcss');
+const purgecss = require('@fullhuman/postcss-purgecss')({
+  content: [
+    './src/**/*.html',
+    './src/**/*.jsx',
+    './src/**/*.tsx',
+  ],
+  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+})
 
 module.exports = function({ env }) {
   return {
@@ -22,6 +30,11 @@ module.exports = function({ env }) {
           require('postcss-import'),
           require('autoprefixer'),
           tailwindcss('./tailwind.config.js'),
+          ...(
+            process.env.NODE_ENV === 'production'
+            ? [purgecss]
+            : []
+          ),
         ],
       }
   },
