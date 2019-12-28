@@ -21,7 +21,7 @@
       "ignore-same-line"
     ],
     "no-floating-promises": [
-      true,
+      false,
       "Bluebird",
       "Navybird"
     ],

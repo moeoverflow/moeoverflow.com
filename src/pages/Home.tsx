@@ -1,11 +1,10 @@
 import React from 'react'
+import { VideoCarouselBackground } from './components/VideoCarouselBackground'
 
 export function Home() {
   return (
-    <div className="App">
-      <p className="text-red-600">
-        hello.
-      </p>
+    <div>
+      <VideoCarouselBackground></VideoCarouselBackground>
     </div>
   )
 }

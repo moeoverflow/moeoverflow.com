@@ -17,7 +17,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noImplicitAny": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noEmit": true,
     "jsx": "react",
     "importHelpers": true,
@@ -31,6 +31,7 @@
     ]
   },
   "include": [
-    "src"
+    "src",
+    "typings"
   ]
 }
