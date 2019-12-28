@@ -17,7 +17,7 @@ export function VideoCarouselBackground(props: VideoCarouselBackgroundProps) {
   const [loops, { updateAt: updateLoopAt }] = useList<any>((new Array(CircleQueueLength)).fill(null))
 
   const getLoopData = useCallback(async () => {
-    const { randomLoops } = await LoopApi.getRandomLoops(6, "telegram-channel-the-best-animeloop")
+    const { randomLoops } = await LoopApi.getRandomLoops(CircleQueueLength, "telegram-channel-the-best-animeloop")
     for (const i of range(CircleQueueLength)) {
       if (loops[i] === null) {
         updateLoopAt(i, randomLoops.pop())
