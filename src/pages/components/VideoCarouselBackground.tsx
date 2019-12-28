@@ -6,9 +6,9 @@ import { LoopApi } from '../../api/loop';
 
 export interface VideoCarouselBackgroundProps {}
 
-const CircleQueueLength = 6
-const MinLengthReloadData = 2
-const CarouselDuration = 30 * 1000
+const CircleQueueLength = 10
+const MinLengthReloadData = 3
+const CarouselDuration = 15 * 1000
 
 export function VideoCarouselBackground(props: VideoCarouselBackgroundProps) {
   const carouselRef = useRef<any>(null)
@@ -17,7 +17,7 @@ export function VideoCarouselBackground(props: VideoCarouselBackgroundProps) {
   const [loops, { updateAt: updateLoopAt }] = useList<any>((new Array(CircleQueueLength)).fill(null))
 
   const getLoopData = useCallback(async () => {
-    const { randomLoops } = await LoopApi.getRandomLoops(6)
+    const { randomLoops } = await LoopApi.getRandomLoops(6, "telegram-channel-the-best-animeloop")
     for (const i of range(CircleQueueLength)) {
       if (loops[i] === null) {
         updateLoopAt(i, randomLoops.pop())

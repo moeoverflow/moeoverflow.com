@@ -1,10 +1,10 @@
 import { graphQLClient } from "./request";
 
 export class LoopApi {
-  static async getRandomLoops(limit: number) {
+  static async getRandomLoops(limit: number, collectionSlug: string) {
     return await graphQLClient.request(`
       query getRandomLoops {
-        randomLoops(limit: ${limit}) {
+        randomLoops(limit: ${limit}, collectionSlug: "${collectionSlug}") {
           uuid
           duration
           files
