@@ -6,8 +6,8 @@ import { LoopApi } from '../../api/loop';
 
 export interface VideoCarouselBackgroundProps {}
 
-const CircleQueueLength = 10
-const MinLengthReloadData = 3
+const CircleQueueLength = 2
+const MinLengthReloadData = 1
 const CarouselDuration = 15 * 1000
 
 export function VideoCarouselBackground(props: VideoCarouselBackgroundProps) {
