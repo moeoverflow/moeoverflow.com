@@ -24,5 +24,3 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pattern: '*.ts'
-      - name: Test
-        run: yarn test
